@@ -12,21 +12,21 @@
   <% end %>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+    <%= form.label :user_name, "Nombre de usuario", style: "display: block" %> <br> 
+    <%= form.text_field :user_name %> <br> <br>
   </div>
 
   <div>
-    <%= form.label :user_name, style: "display: block" %>
-    <%= form.text_field :user_name %>
+    <%= form.label :description, "Cuentanos lo que estás pensando", style: "display: block" %>  <br> 
+    <%= form.text_area :description, rows: 5, cols: 70 %> <br> <br>
+  </div>
+  
+  <div>
+    <%= form.label :url_image, "Pega la url de la imagen que quieras", style: "display: block" %>  <br> 
+    <%= form.text_field :url_image %> <br> <br>
   </div>
 
   <div>
-    <%= form.label :url_image, style: "display: block" %>
-    <%= form.text_field :url_image %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit "Enviar", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -1,11 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Tweets</h1>
-<!--agregando ahora este formulario que es un buscador luego modif el controlador para q esto funcione-->
+<h1> Inicio </h1>
+
+<%= link_to "Nuevo Tweet ¿Qué estás pensando?", new_tweet_path %>
+
+<!-- 
+<h1>Tweets</h1> 
+--agregando ahora este formulario que es un buscador luego modif el controlador para q esto funcione--
 <%= form_with url: tweets_path, method: :get do |form| %>
     <%= form.text_field :query_text, value: params[:query_text] %>
-    <%= form.submit %>
-<% end %>
+    <%= form.submit "Buscar", class: "btn btn-primary" %>
+<% end %>  <br>  <br> 
+-->
 
 <div id="tweets">
 <!--modificando con if else end por si no existen coincidencias -->
@@ -13,7 +19,7 @@
     <% @tweets.order(id: :desc).each do |tweet| %> <!--acá le agregué lo del older id desc para que el ultimo tweet se vea de los 1ros-->
       <%= render tweet %>
       <p>
-        <%= link_to "Show this tweet", tweet %>
+        <%= link_to "Ver más....", tweet %>
       </p>
     <% end %>
     
@@ -25,5 +31,4 @@
 
 </div>
 
-<%= link_to "New tweet", new_tweet_path %>
 

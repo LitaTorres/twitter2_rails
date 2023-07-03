@@ -16,6 +16,7 @@ class TweetsController < ApplicationController
   # GET /tweets/new
   def new
     @tweet = Tweet.new
+    @pagy, @tweets = pagy(Tweet.all) #se agrega variable pagy
   end
 
   # GET /tweets/1/edit
