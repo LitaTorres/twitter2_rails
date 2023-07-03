@@ -1,23 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Tweets</h1>
-
+<!--agregando ahora este formulario que es un buscador luego modif el controlador para q esto funcione-->
 <%= form_with url: tweets_path, method: :get do |form| %>
     <%= form.text_field :query_text, value: params[:query_text] %>
     <%= form.submit %>
 <% end %>
 
 <div id="tweets">
-
+<!--modificando con if else end por si no existen coincidencias -->
   <% if @tweets.count > 0 %> <!-- linea agregada al final x si no existen coincidencias-->
-    <% @tweets.each do |tweet| %>
+    <% @tweets.order(id: :desc).each do |tweet| %> <!--acá le agregué lo del older id desc para que el ultimo tweet se vea de los 1ros-->
       <%= render tweet %>
       <p>
         <%= link_to "Show this tweet", tweet %>
       </p>
     <% end %>
     
-  <%= raw pagy_nav(@pagy) %>
+  <%= raw pagy_nav(@pagy) %> <!-- no olvidar para mostrar la paginación-->
 
   <% else %> <!-- en caso contrario -->
       <h1> No existen coincidencias </h1>

@@ -2,11 +2,11 @@ class TweetsController < ApplicationController
   before_action :set_tweet, only: %i[ show edit update destroy ]
 
   # GET /tweets or /tweets.json
-  def index
-    @pagy, @tweets = pagy(Tweet.all)
-    if params[:query_text].present?
-      @pagy, @tweets = pagy(Tweet.search_full_text(params[:query_text]))
-    end
+  def index 
+    @pagy, @tweets = pagy(Tweet.all) #se agrega variable pagy
+    if params[:query_text].present? #se agrega linea 7 para que el buscador sea funcional
+      @pagy, @tweets = pagy(Tweet.search_full_text(params[:query_text])) 
+    end #se agrega linea 8 tb para q reciba los parametros de query_text 
   end
 
   # GET /tweets/1 or /tweets/1.json
