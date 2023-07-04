@@ -20,7 +20,8 @@
     <% @tweets.order(id: :desc).each do |tweet| %>
       <%= render tweet %>
       <p>
-        <%= link_to "Ver más...", tweet %>
+       <button class="btn btn-info btn-lg" type="submit">
+        <%= link_to "Ver más...", tweet, class:"textotwitter2" %> </button>
       </p>
     <% end %>
 </div>

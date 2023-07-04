@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Twitter2Rails</title>
+  <title>Twitter Leslie </title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -24,7 +24,7 @@
         <nav class="navbar navbar-light text-left columizquierda">
           <ul class="nav flex-column">
             <li class="nav-item mt-5">
-              <i class="icontwitter fa-brands fa-twitter"></i> <span class="label">Twitter</span>
+              <i class="icontwitter fa-brands fa-twitter"></i> 
             </li>
             <li class="nav-item mt-5">
               <i class="icon fa-solid fa-house"></i> <span class="label">
@@ -49,7 +49,7 @@
               <i class="icon fa-regular fa-user"></i> <span class="label">Perfil</span>
             </li>
             <li class="nav-item mt-5 ">
-              <button class="btn btn-primary btn-lg" type="submit">
+              <button class="btn btn-info btn-lg" type="submit">
                 <%= link_to "Twittear", new_tweet_path, class:"textotwitter2" %> </button>
             </li>
           </ul>
@@ -65,7 +65,7 @@
           <h1>Buscar</h1>
           <%= form_with url: tweets_path, method: :get do |form| %>
           <%= form.text_field :query_text, value: params[:query_text] %>
-          <%= form.submit "Buscar", class: "btn btn-primary" %>
+          <%= form.submit "Buscar", class: "btn btn-info" %>
           <% end %> <br>
 
           <h2> <b> Obtener verificación </b> </h2>
