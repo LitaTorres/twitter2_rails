@@ -2,7 +2,30 @@
 
 <h1> Inicio </h1>
 
-<%= link_to "Nuevo Tweet ¿Qué estás pensando?", new_tweet_path %>
+<div class="inicio row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Para ti</h5>
+        <p class="card-text"> ¡Porque tú nos importas! Revisa estas sugerencias especiales para ti</p>
+        <a href="#" class="btn btn-primary">Revisar </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Siguiendo</h5>
+        <p class="card-text"> Mira las tendencias de tus seguidores.</p><br>
+        <a href="#" class="btn btn-primary">Seguidores</a>
+      </div>
+    </div>
+  </div>
+</div>
+<br> <br>
+<div class="d-flex justify-content-center">
+  <%== pagy_bootstrap_nav(@pagy) %> <!-- no olvidar para mostrar la paginación-->
+</div>
 
 <!-- 
 <h1>Tweets</h1> 
@@ -23,12 +46,11 @@
       </p>
     <% end %>
     
-  <%= raw pagy_nav(@pagy) %> <!-- no olvidar para mostrar la paginación-->
+
 
   <% else %> <!-- en caso contrario -->
       <h1> No existen coincidencias </h1>
   <% end %>
 
 </div>
-
 

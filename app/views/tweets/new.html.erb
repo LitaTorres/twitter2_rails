@@ -1,12 +1,18 @@
+<div class="twittear">
 <h1>Nuevo tweet</h1>
 
 <%= render "form", tweet: @tweet %>
+</div>
 
 <br>
 
 <div>
-  <%= link_to "Volver a la vista principal", tweets_path %>
+  <%= link_to "Volver a la vista principal", tweets_path %> <br> <br>
+   <div class="d-flex justify-content-center">
+     <%== pagy_bootstrap_nav(@pagy) %> <!-- no olvidar para mostrar la paginación-->
+  </div>
 </div>
+
 
 <h1>Tweets</h1>
 
@@ -17,7 +23,4 @@
         <%= link_to "Ver más...", tweet %>
       </p>
     <% end %>
-    
-  <%= raw pagy_nav(@pagy) %> <!-- no olvidar para mostrar la paginación-->
-
 </div>
