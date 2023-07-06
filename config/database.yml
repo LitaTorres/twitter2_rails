@@ -82,6 +82,4 @@ test:
 #
 production:
   <<: *default
-  database: twitter2_rails_production
-  username: twitter2_rails
-  password: <%= ENV["TWITTER2_RAILS_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
